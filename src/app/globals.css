@@ -8,12 +8,15 @@ main {
 }
 
 .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
+    height: 30px;
     background-color: #00796b;
-    padding: 1% 2%;
-    margin: 2%;
+    padding: .5% 2%;
+    margin: 1%;
     color: white;
-    text-align: center;
     text-decoration: none;
     border-radius: 10px;
     transition: .3s;

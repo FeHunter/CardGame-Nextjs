@@ -6,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.container}>
         <h1>Guerra de Cartas</h1>
-        <Link href="" className={"button"}>Jogar</Link>
+        <Link href="/pages/deck" className={"button"}>Jogar</Link>
         <Link href="/pages/help" className={"button"}>Como jogar?</Link>
       </div>
     </main>

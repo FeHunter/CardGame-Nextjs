@@ -4,9 +4,11 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>Hello, World!</h1>
-      <Link href="/pages/cardPage">Card</Link>
-      <Link href="/pages/help">Tutorial</Link>
+      <div className={styles.container}>
+        <h1>Guerra de Cartas</h1>
+        <Link href="" className={"button"}>Jogar</Link>
+        <Link href="/pages/help" className={"button"}>Como jogar?</Link>
+      </div>
     </main>
   );
 }

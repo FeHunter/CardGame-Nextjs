@@ -6,7 +6,11 @@
     --shocking-pink: #F92672;
     --dark-gray: #272822;
     --navy-blue: #66D9EF;
-    --transtion: .3s;
+    --transition: .3s;
+
+    /* Cards */
+    --cardX: 220px;
+    --cardY: 330px;
 }
 
 *{
@@ -19,30 +23,49 @@ body {
     margin: 0;
 }
 
-.button {
+/* Default button settings */
+.button, .buttonPlayerCard {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
     height: 30px;
-    background-color: var(--shocking-pink);
     padding: .5% 2%;
     margin: 1%;
-    color: white;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     border: none;
-    transition: var(--transtion);
+    transition: var(--transition);
+}
+.button:hover, .buttonPlayerCard:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.button {
+    background-color: var(--shocking-pink);
+    color: white;
 }
 .button:hover {
-    cursor: pointer;
     color: var(--dark-gray);
-    border-radius: 10px;
     background-color: var(--neon-purple);
-    transition: var(--transtion);
 }
 .button:active {
+    background-color: #A6E22E;
+    border-radius: 10px;
+}
+
+.buttonPlayerCard {
+    background-color: var(--lemon-green);
+    color: var(--dark-gray);
+}
+.buttonPlayerCard:hover {
+    color: var(--dark-gray);
+    background-color: var(--neon-purple);
+}
+.buttonPlayerCard:active {
     background-color: #A6E22E;
     border-radius: 10px;
 }

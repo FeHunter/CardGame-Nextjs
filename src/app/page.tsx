@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h1>Guerra de Cartas</h1>
+        <h1 className={styles.gameTitle}>Guerra de Cartas</h1>
         <Link href="/pages/deck" className={"button"}>Jogar</Link>
         <Link href="/pages/help" className={"button"}>Como jogar?</Link>
       </div>
@@ -13,5 +13,7 @@ export default function Home() {
   );
 }
 
-// API
-// https://rickandmortyapi.com/documentation/
+/*
+API: https://rickandmortyapi.com/documentation/
+Background: https://nickbear.artstation.com/projects/D56vgn
+*/

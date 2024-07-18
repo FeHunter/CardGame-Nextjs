@@ -1,7 +1,34 @@
-.cardDeck {
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-size: cover;
+    /* background-color: var(--dark-gray); */
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/052/584/160/large/nick-bear-screen-shot-2021-11-18-at-12-32-36-pm.jpg");
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+    overflow-y: auto;
+    background-color: rgba(39, 40, 34, 0.2);
+    /* backdrop-filter: blur(5px); */
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.cardPlayerDeck {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 100%;
     padding: 1%;
     margin: 0;
 }

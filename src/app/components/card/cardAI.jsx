@@ -1,18 +1,18 @@
-import style from '../../styles/card.module.css';
+import style from '../../styles/cardAI.module.css';
 
-export default function Card ({character}){
+export default function CardAI ({character}){
     return (
         <div className={style.card}>
             <div className={style.cardInfoContainer}>
                 <h2>{character.name}</h2>
                 <div className={style.cardStatusContainer}>
-                    <span className={style.cardStatusIcon}>10</span>
+                    <span className={style.cardStatusIcon}>6</span>
                 </div>
             </div>
             <img className={style.cardimage} src={character.image} />
             <div className={style.cardActionsContainer}>
-                <button className='buttonPlayerCard'>ATK: 10</button>
-                <button className='buttonPlayerCard'>DEF: 5</button>
+                <p className={style.cardStatus}>ATK: 10</p>
+                <p className={style.cardStatus}>DEF: 5</p>
             </div>
         </div>
     );

@@ -6,23 +6,16 @@
     width: var(--cardX);
     height: var(--cardY);
     padding: 1%;
-    margin: 3% 1% 1% 1%;
-    color: var(--lemon-green);
-    font-weight: bold;
+    margin: 1.5% 1% 1% 1%;
+    color: var(--shocking-pink);
     background-color: var(--dark-gray);
     border-radius: 5px;
     transition: .5s;
 }
 .card:hover {
-    width: calc(var(--cardX) * 1.2);
-    height: calc(var(--cardY) * 1.2);
     margin: 1% 1% 1% 1%;
+    box-shadow: 1px 1px 10px 2px var(--shocking-pink);
     transition: .5s;
-    box-shadow: 1px 1px 50px 20px var(--lemon-green);
-}
-.card:hover > .cardimage {
-    border: 2px dashed var(--lemon-green);
-    transition: var(--transition);
 }
 
 .cardInfoContainer, .cardStatusContainer {
@@ -41,20 +34,36 @@
     width: 10%;
 }
 .cardStatusIcon {
-    color: var(--lemon-green);
+    color: var(--shocking-pink);
 }
 
 .cardimage {
     grid-area: content;
     width: 100%;
-    border-radius: 50%;
-    border: 10px solid var(--lemon-green);
     background-size: cover;
+    border-radius: 50%;
+    border: 10px solid var(--shocking-pink);
     transition: var(--transition);
+}
+
+.cardStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 1% 2%;
+    padding: 1%;
+    font-weight: bold;
+    color: white;
+    background-color: var(--shocking-pink);
+    border-radius: 10px;
 }
 
 .cardActionsContainer {
     grid-area: footer;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }

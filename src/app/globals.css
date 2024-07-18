@@ -1,10 +1,22 @@
+:root {
+    --lemon-green: #A6E22E;
+    --turquoise-blue: #66D9EF;
+    --neon-purple: #AE81FF;
+    --bright-yellow: #E6DB74;
+    --shocking-pink: #F92672;
+    --dark-gray: #272822;
+    --navy-blue: #66D9EF;
+    --transtion: .3s;
+}
+
+*{
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
-}
-
-main {
-    background-color: #f5f5f5;
 }
 
 .button {
@@ -13,15 +25,24 @@ main {
     justify-content: center;
     width: 50%;
     height: 30px;
-    background-color: #00796b;
+    background-color: var(--shocking-pink);
     padding: .5% 2%;
     margin: 1%;
     color: white;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 10px;
-    transition: .3s;
+    border-radius: 5px;
+    border: none;
+    transition: var(--transtion);
 }
 .button:hover {
-    background-color: #1565c0;
-    transition: .3s;
+    cursor: pointer;
+    color: var(--dark-gray);
+    border-radius: 10px;
+    background-color: var(--neon-purple);
+    transition: var(--transtion);
+}
+.button:active {
+    background-color: #A6E22E;
+    border-radius: 10px;
 }

@@ -12,3 +12,6 @@ export default function Home() {
     </main>
   );
 }
+
+// API
+// https://rickandmortyapi.com/documentation/

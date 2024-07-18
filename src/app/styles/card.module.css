@@ -1,0 +1,49 @@
+.card {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 70% 10%;
+    grid-template-areas: 'header' 'content' 'footer';
+    width: 250px;
+    height: 380px;
+    padding: 1%;
+    margin: 3% 1% 1% 1%;
+    color: white;
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+    transition: .5s;
+}
+.card:hover {
+    margin: 1% 1% 1% 1%;
+    transition: .5s;
+}
+
+.cardInfoContainer, .cardStatusContainer {
+    display: flex;
+}
+
+.cardInfoContainer {
+    grid-area: header;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardStatusContainer {
+    justify-content: space-between;
+    width: 30%;
+}
+.cardStatusIcon {
+    color: var(--lemon-green);
+}
+
+.cardimage {
+    grid-area: content;
+    width: 100%;
+    background-size: cover;
+}
+
+.cardActionsContainer {
+    grid-area: footer;
+    display: flex;
+    width: 100%;
+}

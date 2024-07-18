@@ -1,0 +1,7 @@
+.cardDeck {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1%;
+    margin: 0;
+}

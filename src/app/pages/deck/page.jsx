@@ -4,13 +4,26 @@ import { useEffect, useState } from "react";
 import style from '../../styles/deck.module.css';
 import Card from '../../components/card/card';
 import CardAI from '../../components/card/cardAI';
+import CardButton from '../../components/cardButton/CardButton';
 
 export default function Deack (){
 
     const [loading, setLoading] = useState(true);
     const [loadPage, setLoadPage] = useState(parseInt(Math.random() * 42));
+
+    // Cards
+    const MAXCARDS = 3;
+    const [currentPlayerCard, setCurrentPlayerCard] = useState(0);
+    const [currentAiCard, setAiPlayerCard] = useState(parseInt(Math.random()*2));
     const [deck, setDeck] = useState([]);
     const [AIdeck, setAIDeck] = useState([]);
+
+    // Player cards status
+    const [playerCardsStatus, setPlayerCardsStatus] = useState({
+        c1Atk: 0, c1Def: 0,
+        c1Atk: 0, c1Def: 0,
+        c1Atk: 0, c1Def: 0,
+    });
 
     useEffect(()=>{
         setLoading(true);
@@ -27,7 +40,7 @@ export default function Deack (){
             let player_newCards = [];
             let player_card;
             let usedCards = new Set();
-            while (player_newCards.length < 3) {
+            while (player_newCards.length < MAXCARDS) {
                 player_card = data.results[parseInt(Math.random() * data.results.length)];
                 if (!usedCards.has(player_card)) {
                     usedCards.add(player_card);
@@ -40,13 +53,14 @@ export default function Deack (){
             setAIDeck([]);
             let ai_newCards = [];
             let ai_card;
-            while (ai_newCards.length < 3) {
+            while (ai_newCards.length < MAXCARDS) {
                 ai_card = data.results[parseInt(Math.random() * data.results.length)];
                 if (!usedCards.has(ai_card)) {
                     usedCards.add(ai_card);
                     ai_newCards.push(ai_card);
                 }
             }
+            setAiPlayerCard(parseInt(Math.random() * ai_newCards.length-1));
             setAIDeck(ai_newCards);
         })
         .catch(error => {
@@ -65,28 +79,37 @@ export default function Deack (){
 
     return (
         <main className={style.main}>
-            <button className="button" onClick={()=>{ randomDeck(); }}>Novo Deck</button>
             <section className={style.container}>
                 <div className={style.cardPlayerDeck}>
                     {AIdeck.length > 0 && !loading ?
-                        AIdeck.map((character, index) => {
-                            return <CardAI key={`index_${index}`} character={character} />
-                        })
+                        <CardAI key={"Ai_Card"} character={AIdeck[currentAiCard]} />
                     :
                         <p>loading...</p>
                     }
                 </div>
                 <div className={style.cardPlayerDeck}>
-                    {deck.length > 0 && !loading ?
-                        deck.map((character, index) => {
-                            return <Card key={`index_${index}`} character={character} />
-                        })
-                    :
-                        <p>loading...</p>
-                    }
+                    <div>
+                        {deck.length > 0 && !loading ?
+                        <Card key={"Player_Card"} character={deck[currentPlayerCard]} />
+                        :
+                            <p>loading...</p>
+                        }
+                    </div>
+                    <div className={style.cardPlayerDeckActions}>
+                        <CardButton onClick={()=>{
+                            if (currentPlayerCard < deck.length-1){
+                                setCurrentPlayerCard(value => value += 1);
+                            }else {
+                                setCurrentPlayerCard(0);
+                            }
+                        }} />
+                    </div>
                 </div>
             </section>
-            <Link href="/" className="button">Sair do jogo</Link>
+            <div className={style.pageButtons}>
+                <button className="button" onClick={()=>{ randomDeck(); }}>Novo Deck</button>
+                <Link href="/" className="button">Sair do jogo</Link>
+            </div>
         </main>
     );
 }

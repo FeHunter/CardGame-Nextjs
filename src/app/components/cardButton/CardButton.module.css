@@ -1,0 +1,19 @@
+.cardButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    color: white;
+    transition-delay: .2s;
+    transition: .5s;
+}
+
+.cardButton:active {
+    font-size: 1.5em;
+    color: var(--neon-purple);
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: .5s;
+}

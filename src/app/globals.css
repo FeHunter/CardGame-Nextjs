@@ -9,8 +9,8 @@
     --transition: .3s;
 
     /* Cards */
-    --cardX: 220px;
-    --cardY: 330px;
+    --cardX: 50vw;
+    --cardY: 35vh;
 }
 
 *{
@@ -32,6 +32,7 @@ body {
     height: 30px;
     padding: .5% 2%;
     margin: 1%;
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
@@ -63,9 +64,16 @@ body {
 }
 .buttonPlayerCard:hover {
     color: var(--dark-gray);
-    background-color: var(--neon-purple);
 }
 .buttonPlayerCard:active {
-    background-color: #A6E22E;
-    border-radius: 10px;
+    background-color: var(--neon-purple);
+    border-radius: 0px;
+}
+
+@media screen and (min-width: 900px) {
+    :root {
+        /* Cards */
+        --cardX: 15vw;
+        --cardY: 45vh;
+    }
 }

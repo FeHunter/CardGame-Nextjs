@@ -12,6 +12,8 @@ export default function Deck() {
     const [loading, setLoading] = useState(true);
     const [loadPage, setLoadPage] = useState(parseInt(Math.random() * 42));
 
+    const [battle, setBattle] = useState(false);
+
     // Cards
     const MAXCARDS = 3;
     const [currentPlayerCard, setCurrentPlayerCard] = useState(0);
@@ -127,6 +129,13 @@ export default function Deck() {
         setLoadPage(parseInt(Math.random() * 42));
     }
 
+    function battleMode (){
+        setBattle(!battle);
+        if (battle){
+            randomDeck();
+        }
+    }
+
     return (
         <main className={style.main}>
             <section className={style.container}>
@@ -150,6 +159,7 @@ export default function Deck() {
                                 character={deck[currentPlayerCard]}
                                 atk={playerCardsStatus[`c${currentPlayerCard + 1}Atk`]}
                                 def={playerCardsStatus[`c${currentPlayerCard + 1}Def`]}
+                                onClick={battleMode}
                             />
                             :
                             <p>loading...</p>
@@ -170,14 +180,20 @@ export default function Deck() {
                 <button className="button" onClick={randomDeck}>Novo Deck</button>
                 <Link href="/" className="button">Sair do jogo</Link>
             </div>
-            <BattleScreen
-                playerCard={deck[currentPlayerCard]}
-                playerAtk={playerCardsStatus[`c${currentPlayerCard + 1}Atk`]}
-                playerDef={playerCardsStatus[`c${currentPlayerCard + 1}Def`]}
-                enemyCard={AIdeck[currentAiCard]}
-                enemyAtk={aiDeckCardsStatus[`c${currentAiCard + 1}Atk`]}
-                enemyDef={aiDeckCardsStatus[`c${currentAiCard + 1}Def`]}
-            />
+            {
+                battle ?
+                    <BattleScreen
+                        endBattle={battleMode}
+                        playerCard={deck[currentPlayerCard]}
+                        playerAtk={playerCardsStatus[`c${currentPlayerCard + 1}Atk`]}
+                        playerDef={playerCardsStatus[`c${currentPlayerCard + 1}Def`]}
+                        enemyCard={AIdeck[currentAiCard]}
+                        enemyAtk={aiDeckCardsStatus[`c${currentAiCard + 1}Atk`]}
+                        enemyDef={aiDeckCardsStatus[`c${currentAiCard + 1}Def`]}
+                    />
+                :
+                    ''
+            }
         </main>
     );
 }

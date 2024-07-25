@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react';
 import style from '../../styles/BattleScreem.module.css'
 import Card from '../card/card';
 import CardAI from '../card/cardAI';
 
-export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCard, enemyAtk, enemyDef}){
+export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCard, enemyAtk, enemyDef, endBattle}){
+
+    const [battleStatus, setBattleStatus] = useState("...");
+
+    useEffect(()=>{
+        checkBattleStatus();
+    },[]);
+
+    function checkBattleStatus (){
+        if (playerAtk > enemyDef){
+            setBattleStatus("You Win!");
+        }else {
+            setBattleStatus("You Lose!");
+        }
+    }
+
     return (
         <section className={style.battleContainer}>
             <section className={style.battleDesk}>
@@ -15,7 +31,7 @@ export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCa
                     />
                 </div>
                 <div className={style.infoContainer}>
-                    You win!
+                    <p>{battleStatus}</p>
                 </div>
                 <div className={style.cardContainer}>
                     <Card
@@ -26,7 +42,7 @@ export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCa
                     />
                 </div>
                 <div className={style.blockInteraction}></div>
-                <button className="button">New Battle!</button>
+                <button className="button" onClick={endBattle}>New Battle!</button>
             </section>
         </section>
     );

@@ -1,0 +1,61 @@
+.battleContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(5px);
+}
+
+.battleDesk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.cardContainer, .infoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+
+.cardContainer {
+    height: 45%;
+}
+
+.infoContainer {
+    height: 10%;
+    font-size: 1.5em;
+    color: white;
+    /* background-color: green; */
+}
+
+
+.blockInteraction {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 900px) {
+    .battleDesk {
+        width: 30%;
+        height: 95%;
+    }
+    .blockInteraction {
+        position: absolute;
+        width: 65%;
+        height: 80%;
+    }
+    .battleDesk {
+        flex-direction: row-reverse;
+        width: 80%;
+        height: 80%;
+    }
+}

@@ -1,0 +1,33 @@
+import style from '../../styles/BattleScreem.module.css'
+import Card from '../card/card';
+import CardAI from '../card/cardAI';
+
+export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCard, enemyAtk, enemyDef}){
+    return (
+        <section className={style.battleContainer}>
+            <section className={style.battleDesk}>
+                <div className={style.cardContainer}>
+                    <CardAI
+                        key={"Ai_Card_OnBattle"}
+                        character={enemyCard}
+                        atk={enemyAtk}
+                        def={enemyDef}
+                    />
+                </div>
+                <div className={style.infoContainer}>
+                    You win!
+                </div>
+                <div className={style.cardContainer}>
+                    <Card
+                        key={"Player_Card_OnBattle"}
+                        character={playerCard}
+                        atk={playerAtk}
+                        def={playerDef}
+                    />
+                </div>
+                <div className={style.blockInteraction}></div>
+                <button className="button">New Battle!</button>
+            </section>
+        </section>
+    );
+}

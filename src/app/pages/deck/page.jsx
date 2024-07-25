@@ -5,6 +5,7 @@ import style from '../../styles/deck.module.css';
 import Card from '../../components/card/card';
 import CardAI from '../../components/card/cardAI';
 import CardButton from '../../components/cardButton/CardButton';
+import BattleScreen from '../../components/battleScreem/BattleScreem'
 
 export default function Deck() {
 
@@ -169,6 +170,14 @@ export default function Deck() {
                 <button className="button" onClick={randomDeck}>Novo Deck</button>
                 <Link href="/" className="button">Sair do jogo</Link>
             </div>
+            <BattleScreen
+                playerCard={deck[currentPlayerCard]}
+                playerAtk={playerCardsStatus[`c${currentPlayerCard + 1}Atk`]}
+                playerDef={playerCardsStatus[`c${currentPlayerCard + 1}Def`]}
+                enemyCard={AIdeck[currentAiCard]}
+                enemyAtk={aiDeckCardsStatus[`c${currentAiCard + 1}Atk`]}
+                enemyDef={aiDeckCardsStatus[`c${currentAiCard + 1}Def`]}
+            />
         </main>
     );
 }

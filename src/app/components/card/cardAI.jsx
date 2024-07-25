@@ -4,12 +4,9 @@ export default function CardAI ({character, atk, def}){
     return (
         <div className={style.card}>
             <div className={style.cardInfoContainer}>
-                <h2>{character.name}</h2>
-                {/* <div className={style.cardStatusContainer}>
-                    <span className={style.cardStatusIcon}>6</span>
-                </div> */}
+                <h2>{character?.name}</h2>
             </div>
-            <img className={style.cardimage} src={character.image} />
+            <img className={style.cardimage} src={character?.image} />
             <div className={style.cardActionsContainer}>
                 <p className={style.cardStatus}>{atk != undefined  ? `ATK: ${atk}` : '...'}</p>
                 <p className={style.cardStatus}>{def != undefined  ? `DEF: ${def}` : '...'}</p>

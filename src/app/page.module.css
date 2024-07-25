@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     background-image: url("https://cdna.artstation.com/p/assets/images/images/036/404/632/large/nick-bear-312-bg-sq17sc228-int-alien-mothership-air-vent-v06-color-nb-copy.jpg");
+    background-position: center;
 }
 
 .container {
@@ -19,6 +20,7 @@
 }
 
 .gameTitle {
-    font-size: 5em;
+    font-size: 2.5em;
     color: white;
+    text-align: center;
 }

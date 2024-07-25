@@ -144,8 +144,6 @@ export default function Deck() {
                         <CardAI
                             key={"Ai_Card"}
                             character={AIdeck[currentAiCard]}
-                            atk={aiDeckCardsStatus[`c${currentAiCard + 1}Atk`]}
-                            def={aiDeckCardsStatus[`c${currentAiCard + 1}Def`]}
                         />
                         :
                         <p>loading...</p>
@@ -177,8 +175,8 @@ export default function Deck() {
                 </div>
             </section>
             <div className={style.pageButtons}>
-                <button className="button" onClick={randomDeck}>Novo Deck</button>
-                <Link href="/" className="button">Sair do jogo</Link>
+                <button className="button" onClick={randomDeck}>New Deck</button>
+                <Link href="/" className="button">Menu</Link>
             </div>
             {
                 battle ?

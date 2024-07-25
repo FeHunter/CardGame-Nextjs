@@ -9,7 +9,7 @@ export default function Card ({character, atk, def, onClick}){
             <img className={style.cardimage} src={character?.image} />
             <div className={style.cardActionsContainer}>
                 <button className='buttonPlayerCard' onClick={onClick}> {atk != undefined  ? `ATK: ${atk}` : '...'} </button>
-                <button className='buttonPlayerCard' onClick={onClick}> {def != undefined  ? `DEF: ${def}` : '...'} </button>
+                {/* <button className='buttonPlayerCard' onClick={onClick}> {def != undefined  ? `DEF: ${def}` : '...'} </button> */}
             </div>
         </div>
     );

@@ -56,5 +56,6 @@
 .cardActionsContainer {
     grid-area: footer;
     display: flex;
+    justify-content: center;
     width: 100%;
 }

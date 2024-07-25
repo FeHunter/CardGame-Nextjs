@@ -6,6 +6,7 @@ import CardAI from '../card/cardAI';
 export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCard, enemyAtk, enemyDef, endBattle}){
 
     const [battleStatus, setBattleStatus] = useState("...");
+    const [statusStyle, setStatusStyle] = useState(".");
 
     useEffect(()=>{
         checkBattleStatus();
@@ -14,8 +15,10 @@ export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCa
     function checkBattleStatus (){
         if (playerAtk > enemyDef){
             setBattleStatus("You Win!");
+            setStatusStyle(style.winStatus);
         }else {
             setBattleStatus("You Lose!");
+            setStatusStyle(style.loseStatus);
         }
     }
 
@@ -31,7 +34,7 @@ export default function BattleScreem ({playerCard, playerAtk, playerDef, enemyCa
                     />
                 </div>
                 <div className={style.infoContainer}>
-                    <p>{battleStatus}</p>
+                    <p className={statusStyle}>{battleStatus}</p>
                 </div>
                 <div className={style.cardContainer}>
                     <Card

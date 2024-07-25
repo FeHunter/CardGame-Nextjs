@@ -30,16 +30,31 @@
 
 .infoContainer {
     height: 10%;
-    font-size: 1.5em;
-    color: white;
-    /* background-color: green; */
+    font-weight: bold;
 }
 
+.defaultStatus {
+    font-size: 1em;
+    opacity: .5;
+    transition: var(--transition);
+}
+.winStatus, .loseStatus {
+    opacity: 1;
+    font-size: 3em;
+    transition-delay: 1s;
+    transition: var(--transition);
+}
+.winStatus {
+    color: var(--lemon-green);
+}
+.loseStatus {
+    color: var(--shocking-pink);
+}
 
 .blockInteraction {
     position: absolute;
     width: 90%;
-    height: 80%;
+    height: 85%;
     background-color: rgba(0, 0, 0, 0);
 }
 

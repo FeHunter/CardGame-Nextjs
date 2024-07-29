@@ -7,7 +7,7 @@ export default function Home() {
       <div className={styles.container}>
         <h1 className={styles.gameTitle}>Interdimensional Card War</h1>
         <Link href="/pages/deck" className={"button"}>Play</Link>
-        <Link href="/pages/help" className={"button"}>Help</Link>
+        {/* <Link href="/pages/help" className={"button"}>Help</Link> */}
       </div>
     </main>
   );
